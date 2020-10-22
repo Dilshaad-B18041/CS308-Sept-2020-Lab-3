@@ -8,7 +8,7 @@ Team members
 - Mohib Qureshi B18070
 - Abhinav Mehta B18099
 
-## <App name>
+## File Analyser app
 
 This app is capable to provide the statistical data of the words 
 in the text file uploaded by the user. The statistical data may include
