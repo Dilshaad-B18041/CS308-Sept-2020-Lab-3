@@ -8,6 +8,7 @@ Created on Thu Oct 22 12:05:04 2020
 
 from tkinter import *
 import os
+import token_code
 from tkinter import filedialog
 
 def browseFiles(): 
@@ -22,7 +23,7 @@ def browseFiles():
     label_file_explorer.configure(text="File Opened: "+filename)
     
     newstr = os.getcwd()
-    newstr+="/word_in_sep_line.txt"
+    newstr+="/browsed_file.txt"
     
     f = open(newstr, 'w')
     f1 = open(filename, 'r')
@@ -31,7 +32,10 @@ def browseFiles():
     for i in range(0, len(file)):
         f.write(file[i])
     f.close()
+    #to make token_count.txt file 
+    token_code.make_tokens()
     
+
 window = Tk()
 
 window.title("File Chooser")
