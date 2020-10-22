@@ -29,6 +29,7 @@ wrt new changes
 
 - Python3
 - tkinter
+- nltk
 - Pandas
 - Matplotlib
 
