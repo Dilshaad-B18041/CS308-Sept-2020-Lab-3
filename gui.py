@@ -23,7 +23,7 @@ def browseFiles():
     label_file_explorer.configure(text="File Opened: "+filename)
     
     newstr = os.getcwd()
-    newstr+="/browsed_file.txt"
+    newstr="/browsed_file.txt"
     
     f = open(newstr, 'w')
     f1 = open(filename, 'r')
