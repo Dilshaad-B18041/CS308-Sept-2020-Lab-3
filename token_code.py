@@ -1,6 +1,8 @@
 def make_tokens():    
     import nltk
     import os,sys
+    nltk.download('punkt')
+    nltk.download('averaged_perceptron_tagger')
     #read the file from current directory
     f=open(os.path.join(sys.path[0], 'browsed_file.txt'),'r')
     f=f.read()

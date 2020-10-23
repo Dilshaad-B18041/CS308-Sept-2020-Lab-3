@@ -1,11 +1,1 @@
-Our analysis of tax incidence, however, shows that lawmakers cannot so eas-
-ily dictate the distribution of a tax burden. To illustrate, we can analyze a payroll
-tax as merely a tax on a good, where the good is labor and the price is the wage.
-The key feature of the payroll tax is that it places a wedge between the wage that
-firms pay and the wage that workers receive. Figure 8 shows the outcome. When
-a payroll tax is enacted, the wage received by workers falls, and the wage paid
-by firms rises. In the end, workers and firms share the burden of the tax, much as
-the legislation requires. Yet this division of the tax burden between workers and
-firms has nothing to do with the legislated division: The division of the burden in
-Figure 8 is not necessarily fifty-fifty, and the same outcome would prevail if the
-law levied the entire tax on workers or if it levied the entire tax on firms.
+http://pages.cs.wisc.edu/~vernon/cs367/notes/COMPLEXITY-answers.html#ans1
