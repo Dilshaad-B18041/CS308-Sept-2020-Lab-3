@@ -1,1 +1,10 @@
-series
+Lannister joffrey;
+Baratheon stannis;
+Stark ned;
+Greyjoy Piyush;
+Targaryen Rahul;
+Tyrell XYZ;
+Lannister a;
+Lannister b;
+Lannister c;
+

@@ -1,1 +1,12 @@
-series 1
+Lannister 4
+joffrey 1
+Baratheon 1
+stannis 1
+Stark 1
+ned 1
+Greyjoy 1
+Piyush 1
+Targaryen 1
+Rahul 1
+Tyrell 1
+XYZ 1
