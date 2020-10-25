@@ -12,7 +12,8 @@ Team members
 
 This app is capable to provide the statistical data of the words 
 in the text file uploaded by the user. The statistical data may include
-a histogram, bar graph etc. of the data in the text file.
+a histogram, bar graph etc. of the data in the text file. It can also extract
+sentences having required keywords given by the user. 
 
 ### Design
 
@@ -20,6 +21,7 @@ a histogram, bar graph etc. of the data in the text file.
 - Refines the text file and separates words in the file based on
     - Punctuations `. / ' "`
     - Spaces and prepositions.
+    - Keywords from the given file.
 - Saves the refined data in a new txt file in the current directory.
 - Create graphs based on the data obtained from the refined file.
 - Feature to edit the file again and then refresh the screen to display statistics 
