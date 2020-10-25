@@ -8,6 +8,7 @@ Created on Thu Oct 22 12:05:04 2020
 
 from tkinter import *
 import os
+import sentence
 import token_code
 import stats_code
 from tkinter import filedialog
@@ -15,8 +16,11 @@ import matplotlib.pyplot as plt
 from matplotlib.figure import Figure
 from matplotlib.backends.backend_tkagg import (FigureCanvasTkAgg,
                                                NavigationToolbar2Tk)
-
+var1=0
+var2=0
+var3=0
 def browseFiles(state): 
+    global var1,var2,var3
     filename = filedialog.askopenfilename(initialdir = "/", 
                                           title = "Select a File", 
                                           filetypes = (("Text files", 
@@ -29,9 +33,14 @@ def browseFiles(state):
     
     newstr = os.getcwd()
     if(state=="select"):
+        var1=1
         newstr="browsed_file.txt"
     elif(state=="neglect"):
+        var2=1
         newstr="exclude_file.txt"
+    elif(state=="extract"):
+        var3=1
+        newstr="extract_file.txt"
 
     f = open(newstr, 'w')
     f1 = open(filename, 'r')
@@ -42,10 +51,11 @@ def browseFiles(state):
     f.close()
     #to make token_count.txt file 
     token_code.make_tokens(state)
-    if(state=="neglect"):
+    if(var1==1 and var2==1 and var3==1):
         fig = Figure(figsize=(150, 6), dpi=100)    
         plot1 = fig.add_subplot(111)
-        stats_code.func(window, maxprint, minprint,sentprint,fig, plot1)	
+        stats_code.func(window, maxprint, minprint,sentprint,fig, plot1)
+        sentence.line_wth_key()
 
 
 window = Tk()
@@ -65,12 +75,16 @@ label_file_explorer = Label(window,
    
        
 button_explore = Button(window,  
-                        text = "Choose Files", 
+                        text = "Choose Main Text File", 
                         command = lambda:browseFiles("select"))  
 
 button_explore1 = Button(window,  
-                        text = "Choose Files1", 
+                        text = "Choose ignore text file", 
                         command = lambda:browseFiles("neglect"))
+button_explore2 = Button(window,  
+                        text = "Choose extract txt file", 
+                        command = lambda:browseFiles("extract"))
+
    
 #button_exit = Button(window,  
 #                     text = "Exit", 
@@ -105,6 +119,7 @@ sentprint = Label(window,
 #plot_button.pack() 
 button_explore.pack()
 button_explore1.pack()
+button_explore2.pack()
 label_file_explorer.pack()
 maxprint.pack()
 minprint.pack()
