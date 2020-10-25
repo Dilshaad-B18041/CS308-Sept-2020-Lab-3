@@ -4,7 +4,6 @@ from tkinter import filedialog
 
 import os
 import sys
-#comment
 
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 
