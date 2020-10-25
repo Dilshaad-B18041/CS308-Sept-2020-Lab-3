@@ -13,17 +13,29 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 def func(window, maxprint, minprint, sentprint, fig, plot1):
     # file containing words after removing articles,prepos etc
     token_file = open("token_count.txt", "r")
+    token_file_exclude = open("token_count_exclude_file.txt", "r")
     # and their corresponding count
 
     browsed_file = open("browsed_file.txt", "r")  # actual text file
 
     word_dict = {}  # Dictionary to hold words and their corresponding frequency
-
+    word_dict_exclude = {} # Dictionary to hold words and their corresponding frequency which are to exclude
+    
+    for line in token_file_exclude:                     # making the word_dict dictionary
+        word, cnt = line.strip().split(" ")
+        word_dict_exclude[word] = int(cnt)
+    # print(word_dict_exclude)
     for line in token_file:                     # making the word_dict dictionary
         word, cnt = line.strip().split(" ")
-        word_dict[word] = int(cnt)
-
+        try:
+            if(word_dict_exclude[word]>=1):
+                pass        
+        except:
+            word_dict[word] = int(cnt)
+    # print(word_dict)
     # %%  Finding all words that occured maximum time
+    token_file.close()
+    token_file_exclude.close()
 
     # frequency of word(s) occurung max time
     max_cnt = max(word_dict.items(), key=lambda x: x[1])
@@ -107,7 +119,7 @@ def func(window, maxprint, minprint, sentprint, fig, plot1):
                 sentence_cnt += 1
             elif char == "\n":
                 new_line_cnt += 1
-
+    browsed_file.close()
     # print("===============================================================")
 
     # print("Number of sentences in the given text file is : ",sentence_cnt,"\n\n\n")  #printing number of sentences

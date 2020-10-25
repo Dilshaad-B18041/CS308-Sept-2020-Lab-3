@@ -16,7 +16,7 @@ from matplotlib.figure import Figure
 from matplotlib.backends.backend_tkagg import (FigureCanvasTkAgg,
                                                NavigationToolbar2Tk)
 
-def browseFiles(): 
+def browseFiles(state): 
     filename = filedialog.askopenfilename(initialdir = "/", 
                                           title = "Select a File", 
                                           filetypes = (("Text files", 
@@ -28,8 +28,11 @@ def browseFiles():
     label_file_explorer.configure(text="File Opened: "+filename)
     
     newstr = os.getcwd()
-    newstr="browsed_file.txt"
-    
+    if(state=="select"):
+        newstr="browsed_file.txt"
+    elif(state=="neglect"):
+        newstr="exclude_file.txt"
+
     f = open(newstr, 'w')
     f1 = open(filename, 'r')
     file = f1.readlines()
@@ -38,10 +41,12 @@ def browseFiles():
         f.write(file[i])
     f.close()
     #to make token_count.txt file 
-    token_code.make_tokens()
-    fig = Figure(figsize=(150, 6), dpi=100)    
-    plot1 = fig.add_subplot(111)
-    stats_code.func(window, maxprint, minprint,sentprint,fig, plot1)	
+    token_code.make_tokens(state)
+    if(state=="neglect"):
+        fig = Figure(figsize=(150, 6), dpi=100)    
+        plot1 = fig.add_subplot(111)
+        stats_code.func(window, maxprint, minprint,sentprint,fig, plot1)	
+
 
 window = Tk()
 
@@ -61,7 +66,11 @@ label_file_explorer = Label(window,
        
 button_explore = Button(window,  
                         text = "Choose Files", 
-                        command = browseFiles)  
+                        command = lambda:browseFiles("select"))  
+
+button_explore1 = Button(window,  
+                        text = "Choose Files1", 
+                        command = lambda:browseFiles("neglect"))
    
 #button_exit = Button(window,  
 #                     text = "Exit", 
@@ -95,6 +104,7 @@ sentprint = Label(window,
 # in main window 
 #plot_button.pack() 
 button_explore.pack()
+button_explore1.pack()
 label_file_explorer.pack()
 maxprint.pack()
 minprint.pack()
