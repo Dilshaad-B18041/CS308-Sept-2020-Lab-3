@@ -37,7 +37,12 @@ wrt new changes
 
 ### How to run ?
 
-1. Clone this repo using git clone ---
+1. Clone this repo using `git clone` ---
 2. Go to the folder CS308-Sept-2020-Lab-3.
-3. Run `main.py` file using `python main.py`.
-4. Upload a `.txt` file by clicking the button.
+3. Install the required liraries.
+4. Run `main.py` file using `python main.py`.
+5. Upload a `.txt` file by clicking on **Choose Main Text File** button.
+6. Now click on **Choose Ignore Text File** button to select a file with the words user wants to
+   exclude other than punctuations and articles.
+7. Now click on **Choose Extract Text File** button and select file which will have the keywords
+   and the corresponding sentences will get extracted.
